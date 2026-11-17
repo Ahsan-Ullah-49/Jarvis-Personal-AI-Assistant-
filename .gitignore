@@ -4,3 +4,14 @@
 node_modules/
 .DS_Store
 .vercel/
+
+# Private n8n workflow exports can contain API keys and credentials.
+# Never commit them. Keep a local-only backup outside the repository.
+Jarvis.json
+*.n8n.json
+n8n-workflow*.json
+workflow-export*.json
+
+# Local logs and OS junk
+*.log
+Thumbs.db

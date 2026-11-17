@@ -4,16 +4,13 @@ Bro, ye ACTUAL runnable frontend hai, concept picture nahi.
 
 ## 1. PC par chalana
 
-1. `JARVIS_Live_Cyberpunk_v4.zip` ko extract karo.
-2. Antigravity / VS Code mein **andar wala JARVIS_Live_Cyberpunk_v4 folder** open karo. Yahin `package.json` hona chahiye.
+1. Repository ko clone ya extract karo.
+2. VS Code mein **repository root folder** open karo. Yahin `package.json` aur `index.html` hone chahiye (ab koi nested app folder nahi hai).
 3. Terminal kholo. Check: `node -v` (Node.js 20+).
 4. Run: `npm run dev`
 5. Browser mein `http://localhost:3000` open karo.
 
 **npm install ki zaroorat nahi.** Agar `Missing script: dev` aaye to tum galat folder mein ho: us folder ko open karo jahan `package.json` rakha hai.
-
-### Instant preview
-`JARVIS_Live_Cyberpunk_v4_Demo.html` browser mein open karne se design check kar sakte ho, lekin ye single-file **demo only** hai. Ismein real n8n integration enabled nahi hai. Android local file se microphone permission aksar block ho sakti hai. Proper local webserver/HTTPS par voice zyada reliable rehti hai.
 
 ## 2. Animation ko use karna
 

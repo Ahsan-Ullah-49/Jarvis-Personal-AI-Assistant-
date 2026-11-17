@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Secure n8n-connected cinematic JARVIS interface with animated 3D core, chat sidebar, personal login and Vercel proxy.",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "node dev-server.mjs",
     "start": "node dev-server.mjs",

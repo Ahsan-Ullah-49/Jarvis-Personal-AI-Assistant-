@@ -90,6 +90,8 @@ Deploy aap khud karein. Vercel project mein same private environment variables s
 
 `NEXT_PUBLIC_` prefix use na karein. `vercel.json` static frontend aur `api/*.js` Node Functions ke liye configured hai. Deploy ke baad HTTPS par login aur actual n8n reply manually test karein.
 
+Vercel project ki **Root Directory empty (repository root)** honi chahiye, kyunke `index.html`, `package.json` aur `api/` ab repo root par hain. Framework Preset **Other** rakhein, build command ki zaroorat nahi. Agar 404 aaye to pehle Root Directory aur Output Directory check karein.
+
 ## Future portable hosting
 
 Static files kisi bhi static host par chal sakti hain, lekin `api/auth.js` aur `api/chat.js` ko Node.js serverless functions ya always-on Node server chahiye. Hostinger ke ordinary shared PHP plans is architecture ke liye enough nahi hote; Node.js-capable hosting/function support aur secure environment-variable management required hai. Migration par n8n URL env variable se update hoti hai—frontend code mein production domain hardcoded nahi.

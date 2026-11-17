@@ -36,7 +36,13 @@ The interactive wizard writes `.env.local` locally. It requires your authenticat
 
 ## Deployment
 
-Vercel supports plain static HTML/CSS/JS plus `/api/*.js` Node Functions. Import the repository into Vercel, select Other, add server env values, and deploy. `vercel.json` includes the function configuration. Free Hobby use is limited to personal non-commercial projects and quotas.
+The application files live at the repository root (`index.html`, `package.json`, `vercel.json`, `api/`), so Vercel can serve it with zero extra configuration:
+
+- Framework Preset: **Other** (no build step, Output Directory = repository root).
+- **Root Directory must stay empty** (repo root). Do not point it at a subfolder.
+- Add `JARVIS_APP_PASSCODE`, `JARVIS_SESSION_SECRET`, `N8N_WEBHOOK_URL` and `N8N_HEADER_AUTH_SECRET` under Project Settings → Environment Variables, then redeploy.
+
+Vercel supports plain static HTML/CSS/JS plus `/api/*.js` Node Functions. `vercel.json` includes the function configuration. Free Hobby use is limited to personal non-commercial projects and quotas.
 
 ## Actual scope & limits
 

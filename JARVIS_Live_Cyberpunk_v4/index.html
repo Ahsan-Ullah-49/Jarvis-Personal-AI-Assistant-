@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#030b19" />
+  <meta name="description" content="JARVIS Live Cyberpunk. A cinematic personal AI workspace with 3D neural core, projects, conversations, and research." />
+  <title>JARVIS | Personal Intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5A9 9 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5Z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2ZM19 17l.9 2.1L22 20l-2.1.9L19 23l-.9-2.1L16 20l2.1-.9L19 17Z"/></symbol>
+    <symbol id="i-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-28 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(58 12 12)"/></symbol>
+    <symbol id="i-headphones" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v7H6a2 2 0 0 1-2-2v-5ZM20 14h-3v7h1a2 2 0 0 0 2-2v-5Z"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-12h-7V2Z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5m-7 7 7-7 7 7"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3m-4 0h8"/></symbol>
+    <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m20 11-8.5 8.5a6 6 0 0 1-8.5-8.5l9-9a4 4 0 0 1 5.7 5.7l-9 9a2 2 0 0 1-2.8-2.8l8-8"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="m10 3-.5 2-2 .9-1.8-1-2 3.5 1.7 1.2-.2 2.4-1.9 1 1.7 3.6 2.1-.6 1.8 1.4.1 2.2h4l.5-2 2-.9 1.8 1 2-3.5-1.7-1.2.2-2.4 1.9-1L18.9 6l-2.1.6L15 5.2 14.9 3H10Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="m16 3 5 5-3 1-3 5-5 1-5 5-1-1 5-5 1-5 5-3 1-3Z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M3 17.2V21h3.8l11-11-3.8-3.8-11 11ZM13.9 6.1l2.7-2.7a2 2 0 0 1 2.8 0l1.2 1.2a2 2 0 0 1 0 2.8l-2.7 2.7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M3 9h5l5-4v14l-5-4H3V9ZM17 9a5 5 0 0 1 0 6m2-9a9 9 0 0 1 0 12"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 17V4m-5 5 5-5 5 5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-5 4 3 3-3 5 4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2ZM14 2v6h6M8 12h8M8 16h8"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.5 7 .8-5.2 4.8 1.4 7-6.2-3.5-6.2 3.5 1.4-7L2 9.3l7-.8L12 2Z"/></symbol>
+    <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M20 4l-2 2M6 18l-2 2"/></symbol>
+    <symbol id="i-loader" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9"/></symbol>
+    <symbol id="i-log-out" viewBox="0 0 24 24"><path d="M9 3H4v18h5M13 7l5 5-5 5m-9-5h14"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7" cy="14" r="4"/><path d="m10 11 10-9 2 2-2 2 2 2-3 3-2-2-4 4"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+  </svg>
+
+  <div id="app" class="app-shell">
+    <div class="mobile-shade" id="mobile-shade"></div>
+    <aside class="sidebar" id="sidebar" aria-label="Conversation navigation">
+      <div class="sidebar-top">
+        <div class="brand-row">
+          <a href="#" class="brand" id="brand-home" aria-label="JARVIS home">
+            <span class="brand-mark"><svg viewBox="0 0 48 48" fill="none"><circle class="logo-ring-outer" cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.4" opacity=".6"/><circle class="logo-ring-inner" cx="24" cy="24" r="13" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4"/><path d="M16 16h16v12c0 6-4 9-9 9h-2" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="3" fill="currentColor"/></svg></span>
+            <span><strong>JARVIS</strong><small>CYBERPUNK LIVE · AI</small></span>
+          </a>
+          <button class="icon-button subtle hide-mobile" id="collapse-sidebar" title="Collapse sidebar" aria-label="Collapse sidebar"><svg class="icon"><use href="#i-panel"/></svg></button>
+        </div>
+        <button class="new-chat-btn" id="new-chat-btn"><svg class="icon"><use href="#i-plus"/></svg><span>New conversation</span><kbd>⌘ K</kbd></button>
+        <button class="side-nav-item" id="search-trigger"><svg class="icon"><use href="#i-search"/></svg><span>Search conversations</span><kbd>⌘ /</kbd></button>
+        <button class="side-nav-item" id="voice-nav"><svg class="icon"><use href="#i-headphones"/></svg><span>Voice session</span><span class="tiny-beta">BETA</span></button>
+        <div class="side-divider"></div>
+        <div class="project-section">
+          <div class="projects-heading"><span>PROJECTS</span><button class="projects-add" id="new-project-btn" title="Create project" aria-label="Create project"><svg class="icon"><use href="#i-plus"/></svg></button></div>
+          <div id="projects-list" class="projects-list" aria-label="Saved projects"></div>
+        </div>
+        <div class="history-header"><span>CHATS</span><button class="chat-all-button active" id="all-chats-btn" title="Show all chats"><span id="chat-filter-label">ALL</span><span class="project-badge" id="chat-count">0</span></button></div>
+      </div>
+      <div class="sidebar-history" id="sidebar-history"><p class="history-empty">Your conversations will appear here. Start with a question.</p></div>
+      <div class="sidebar-bottom">
+        <div class="sidebar-system"><span class="pulse-dot"></span><span>NEURAL INTERFACE <b>READY</b></span><span class="version">V 04.0</span></div>
+        <button class="profile-btn" id="settings-trigger"><span class="profile-avatar">AU</span><span><strong>Owner controls</strong><small>Settings &amp; preferences</small></span><svg class="icon"><use href="#i-more"/></svg></button>
+      </div>
+    </aside>
+
+    <div class="main-shell" id="main-shell">
+      <header class="topbar">
+        <div class="top-left">
+          <button class="icon-button mobile-menu" id="open-sidebar" aria-label="Open sidebar"><svg class="icon"><use href="#i-menu"/></svg></button>
+          <button class="icon-button open-sidebar-desktop hidden" id="expand-sidebar" aria-label="Expand sidebar"><svg class="icon"><use href="#i-panel"/></svg></button>
+          <span class="workspace-breadcrumb">JARVIS <span class="crumb-divider">/</span> <strong id="top-title">Overview</strong></span>
+        </div>
+        <div class="top-right">
+          <span class="top-chip secure-chip"><svg class="icon"><use href="#i-shield"/></svg> PRIVATE WORKSPACE</span>
+          <span class="top-chip clock-chip"><svg class="icon"><use href="#i-clock"/></svg><span id="pst-clock">--:-- PKT</span></span>
+          <button class="model-pill" id="status-button" title="Backend connection details"><span class="status-led"></span><span id="connection-label">DEMO MODE</span><svg class="icon tiny"><use href="#i-chevron"/></svg></button>
+        </div>
+      </header>
+      <div class="main-content" id="main-content">
+        <canvas class="space-field" id="space-field" aria-hidden="true"></canvas>
+        <div class="ambient-grid"></div><div class="ambient-lights"></div>
+        <div class="main-scroll" id="main-scroll">
+          <section class="welcome-view" id="welcome-view">
+            <div class="welcome-overline"><span class="overline-bar"></span> YOUR PERSONAL COGNITIVE SYSTEM <span class="overline-bar"></span></div>
+            <div class="hero-scene">
+              <div class="scene-bg" aria-hidden="true"></div>
+              <div class="hero-scanline"></div>
+              <div class="core-render"><canvas id="hero-orb" aria-label="Drag to rotate animated 3D neural core" role="img" tabindex="0"></canvas></div>
+              <div class="orb-controls" aria-label="Neural core animation controls"><button id="spin-core" type="button" title="Boost core spin" aria-label="Spin core faster"><svg class="icon"><use href="#i-zap"/></svg><span>BOOST</span></button><button id="reset-core" type="button" title="Reset core angle" aria-label="Reset core orientation"><svg class="icon"><use href="#i-orbit"/></svg><span>RESET</span></button></div>
+              <div class="hero-side-rules" aria-hidden="true"></div>
+            </div>
+            <div class="hero-heading">
+              <h1>What shall we <em>explore</em> today?</h1>
+              <p>Your thinking partner for research, development, learning, and everything in between.</p>
+            </div>
+            <div class="suggestions" id="suggestions">
+              <button class="suggestion" data-question="What are the most important AI developments this week? Explain with reliable sources."><svg class="icon"><use href="#i-spark"/></svg><span>Discover what's new in AI</span><svg class="icon suggestion-arrow"><use href="#i-arrow"/></svg></button>
+              <button class="suggestion" data-question="Teach me a practical advanced Next.js concept with a small project example."><svg class="icon"><use href="#i-zap"/></svg><span>Build something ambitious</span><svg class="icon suggestion-arrow"><use href="#i-arrow"/></svg></button>
+              <button class="suggestion" data-question="Explain a major geopolitical development with historical context and competing viewpoints."><svg class="icon"><use href="#i-globe"/></svg><span>Understand world affairs</span><svg class="icon suggestion-arrow"><use href="#i-arrow"/></svg></button>
+            </div>
+          </section>
+          <section class="chat-view hidden" id="chat-view"><div class="chat-core-header"><div class="chat-core-mini"><canvas id="chat-orb" aria-label="Live animated JARVIS core"></canvas></div><div class="chat-core-label">JARVIS / NEURAL STREAM<small>CORE IN MOTION · READY</small></div><span class="chat-core-live" aria-hidden="true"></span></div><div class="chat-conversation" id="messages"></div><div class="typing-indicator hidden" id="typing"><span class="mini-ai-logo">J</span><span class="typing-dots"><i></i><i></i><i></i></span><span class="typing-label">JARVIS is thinking...</span></div></section>
+        </div>
+        <footer class="composer-zone">
+          <div class="composer-wrap">
+            <div class="composer-topline"><span class="composer-mode-text" id="composer-mode-text"><span class="pulse-dot"></span> Ready when you are</span><button class="draft-clear hidden" id="clear-attachments">Clear attachments</button></div>
+            <div class="composer" id="composer">
+              <div class="attachment-list hidden" id="attachment-list"></div>
+              <div class="composer-input-row"><textarea id="prompt-input" rows="1" placeholder="Message JARVIS..." aria-label="Message JARVIS"></textarea></div>
+              <div class="composer-bottom-row"><div class="composer-actions">
+                  <div class="tool-menu-wrap"><button class="composer-icon action-plus" id="tool-menu-trigger" aria-label="Tools and attachments" title="Tools and attachments" aria-expanded="false"><svg class="icon"><use href="#i-plus"/></svg></button>
+                    <div class="tools-menu hidden" id="tools-menu" role="menu">
+                      <span class="menu-header">ATTACH &amp; RESEARCH</span>
+                      <button id="attach-files-btn"><svg class="icon"><use href="#i-paperclip"/></svg><span>Attach files or images</span></button>
+                      <button id="menu-research"><svg class="icon"><use href="#i-globe"/></svg><span>Web search</span><span class="menu-subvalue" id="menu-search-value">Auto</span></button>
+                      <button id="menu-mode"><svg class="icon"><use href="#i-layers"/></svg><span>Research mode</span><span class="menu-subvalue" id="menu-mode-value">Auto</span></button>
+                      <button id="menu-effort"><svg class="icon"><use href="#i-zap"/></svg><span>Reasoning effort</span><span class="menu-subvalue" id="menu-effort-value">Balanced</span></button>
+                    </div>
+                  </div>
+                  <button class="tool-chip" id="mode-chip"><svg class="icon"><use href="#i-spark"/></svg><span id="mode-chip-label">Auto</span><svg class="icon tiny"><use href="#i-chevron"/></svg></button>
+                  <button class="tool-chip search-chip" id="search-chip"><svg class="icon"><use href="#i-globe"/></svg><span id="search-chip-label">Search: Auto</span></button>
+                  <input type="file" id="file-input" multiple accept=".txt,.md,.json,.csv,.pdf,image/*" hidden />
+                </div><div class="right-actions"><button class="composer-icon" id="mic-btn" title="Dictate using microphone" aria-label="Dictate using microphone"><svg class="icon"><use href="#i-mic"/></svg></button><button class="composer-icon" id="call-btn" title="Start voice conversation" aria-label="Start voice conversation"><svg class="icon"><use href="#i-headphones"/></svg></button><button class="send-button" id="send-btn" title="Send message" aria-label="Send message"><svg class="icon"><use href="#i-arrow"/></svg></button></div>
+              </div>
+            </div>
+            <div class="composer-footer"><span id="footer-hint">JARVIS may make mistakes. Verify important information.</span><span class="footer-brand"><span class="footer-light"></span> DESIGNED FOR CURIOSITY</span></div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay hidden" id="search-overlay" role="dialog" aria-modal="true" aria-label="Search conversations"><div class="overlay-backdrop" data-close="search"></div><div class="search-dialog"><div class="dialog-search-row"><svg class="icon"><use href="#i-search"/></svg><input id="search-input" placeholder="Search your conversations..." aria-label="Search chat history"/><button class="esc-key" data-close="search">ESC</button></div><div class="search-results" id="search-results"></div><div class="dialog-foot">Local search across conversations on this device.</div></div></div>
+  <div class="overlay hidden" id="settings-overlay" role="dialog" aria-modal="true" aria-label="Settings"><div class="overlay-backdrop" data-close="settings"></div><div class="settings-panel"><div class="panel-head"><div><small>PERSONAL CONFIGURATION</small><h2>JARVIS settings</h2></div><button class="icon-button" data-close="settings" aria-label="Close settings"><svg class="icon"><use href="#i-x"/></svg></button></div>
+    <div class="settings-content">
+      <div class="setting-section"><h3>Neural interface</h3><div class="setting-row"><div><strong>Core animation</strong><p>Enable the animated holographic 3D scene.</p></div><label class="switch"><input type="checkbox" id="animate-core" checked/><span></span></label></div><div class="setting-row"><div><strong>Read assistant replies aloud</strong><p>Use built-in browser text-to-speech.</p></div><label class="switch"><input type="checkbox" id="autoplay-voice"/><span></span></label></div><div class="select-row"><label for="voice-select">Browser voice</label><select id="voice-select" aria-label="Browser speech voice"><option value="">System default</option></select></div><div class="select-row"><label for="voice-rate">Speaking rate <span id="voice-rate-value">0.96×</span></label><input id="voice-rate" type="range" min="0.7" max="1.25" step="0.05" value="0.96"/></div><button id="stop-speech" class="settings-logout hidden"><svg class="icon"><use href="#i-stop"/></svg> Stop speaking</button></div>
+      <div class="setting-section"><h3>Research defaults</h3><div class="select-row"><label for="setting-mode">Research mode</label><select id="setting-mode"><option value="auto">Auto</option><option value="quick">Quick</option><option value="detailed">Detailed</option><option value="deep_research">Deep research</option><option value="fact_check">Fact check</option><option value="compare">Compare</option><option value="explain">Explain</option></select></div><div class="select-row"><label for="setting-search">Web search</label><select id="setting-search"><option value="auto">Auto</option><option value="on">Always on</option><option value="off">Off</option></select></div><div class="select-row"><label for="setting-effort">Reasoning effort</label><select id="setting-effort"><option value="balanced">Balanced</option><option value="high">High</option><option value="maximum">Maximum</option></select></div></div>
+      <div class="setting-section"><h3>Conversation data</h3><p class="settings-info">Chats are currently saved in this browser only. They do not synchronize between your phone and computer yet.</p><div class="settings-buttons"><button id="export-chats"><svg class="icon"><use href="#i-download"/></svg> Export chats</button><button id="import-chats"><svg class="icon"><use href="#i-upload"/></svg> Import chats</button><input type="file" id="import-input" accept="application/json,.json" hidden/></div><button class="danger-button" id="delete-all-chats"><svg class="icon"><use href="#i-trash"/></svg> Delete all local conversations</button></div>
+      <div class="setting-section"><h3>Backend connection</h3><div class="connection-panel" id="connection-details"><span class="pulse-dot"></span><div><strong>Checking configuration...</strong><p>Verifying your local/demo mode.</p></div></div><p class="settings-info">Configure the private server environment and n8n Production Webhook to activate real AI responses. Secrets are never stored in the browser.</p><button id="logout-btn" class="settings-logout hidden"><svg class="icon"><use href="#i-log-out"/></svg> Lock workspace</button></div>
+    </div>
+    <div class="panel-bottom"><span>JARVIS INTERFACE V4.0</span><span>BUILT FOR WHAT'S NEXT</span></div></div></div>
+  <div class="overlay hidden" id="voice-overlay" role="dialog" aria-modal="true" aria-label="JARVIS voice conversation"><div class="voice-background"></div><div class="voice-top"><div class="voice-top-brand"><span class="voice-icon-dot"></span> JARVIS / VOICE LINK <small>BROWSER BETA</small></div><button class="icon-button" id="close-voice" aria-label="Close voice"><svg class="icon"><use href="#i-x"/></svg></button></div><div class="voice-center"><div class="voice-orb-stage"><canvas id="voice-orb" aria-label="Animated voice neural core"></canvas></div><span class="voice-mode" id="voice-mode">VOICE LINK STANDBY</span><h2 id="voice-title">Speak naturally.</h2><p id="voice-transcript">Tap Start listening. This is turn-based browser voice mode.</p><div class="voice-actions"><button id="voice-mute" class="voice-control"><svg class="icon"><use href="#i-mic"/></svg><span>Start listening</span></button><button id="voice-stop-speech" class="voice-control"><svg class="icon"><use href="#i-stop"/></svg><span>Stop speaking</span></button><button id="voice-hangup" class="voice-control voice-end"><svg class="icon"><use href="#i-x"/></svg><span>End session</span></button></div></div><div class="voice-footer">Speech recognition depends on your browser. Phone calls and continuous real-time streaming are not enabled yet.</div></div>
+  <div class="lock-screen hidden" id="lock-screen"><div class="lock-card"><div class="lock-emblem"><svg class="icon"><use href="#i-orbit"/></svg></div><div class="lock-overline">SECURE PRIVATE WORKSPACE</div><h1>Welcome to JARVIS</h1><p>Enter your owner passcode to unlock your personal intelligence workspace.</p><form id="unlock-form"><label for="passcode-input">WORKSPACE PASSCODE</label><input type="password" id="passcode-input" placeholder="Enter access code" required autocomplete="current-password"/><button type="submit">Unlock interface <svg class="icon"><use href="#i-arrow"/></svg></button></form><span id="unlock-error" class="unlock-error"></span><div class="lock-footer"><svg class="icon"><use href="#i-shield"/></svg> Secured server-side session</div></div></div>
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  <div class="dropdown-scrim hidden" id="dropdown-scrim"></div><div class="option-popover hidden" id="option-popover"></div>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

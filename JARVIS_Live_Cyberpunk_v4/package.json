@@ -1,0 +1,13 @@
+{
+  "name": "jarvis-live-cyberpunk",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Secure n8n-connected cinematic JARVIS interface with animated 3D core, chat sidebar, personal login and Vercel proxy.",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs",
+    "check": "node --check app.js && node --check orb.js && node --check space.js && node --check api/chat.js && node --check api/auth.js && node --check scripts/connect-n8n.mjs",
+    "connect": "node scripts/connect-n8n.mjs"
+  }
+}

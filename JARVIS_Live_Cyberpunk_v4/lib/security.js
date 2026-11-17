@@ -1,0 +1,11 @@
+import { createHmac, randomBytes, timingSafeEqual } from 'node:crypto';
+const COOKIE='jarvis_session';
+const MAX_AGE=7*24*60*60;
+export function getConfig(){return {configured:Boolean(process.env.JARVIS_APP_PASSCODE&&process.env.JARVIS_SESSION_SECRET),live:Boolean(process.env.N8N_WEBHOOK_URL&&process.env.N8N_HEADER_AUTH_SECRET)}}
+export function secureEq(a,b){const ah=createHmac('sha256','jarvis-passcode-compare').update(String(a)).digest(),bh=createHmac('sha256','jarvis-passcode-compare').update(String(b)).digest();return timingSafeEqual(ah,bh)}
+function signature(data){return createHmac('sha256',process.env.JARVIS_SESSION_SECRET||'not-configured').update(data).digest('base64url')}
+export function createToken(){let payload=Buffer.from(JSON.stringify({exp:Date.now()+MAX_AGE*1000,nonce:randomBytes(12).toString('base64url')})).toString('base64url');return payload+'.'+signature(payload)}
+export function verifyToken(req){if(!getConfig().configured)return false;const cookies=String(req.headers.cookie||'').split(';').map(v=>v.trim());let cookie=cookies.find(c=>c.startsWith(COOKIE+'='));if(!cookie)return false;let token=cookie.slice(COOKIE.length+1),[body,sig,extra]=token.split('.');if(!body||!sig||extra)return false;let validSig=signature(body);if(!secureEq(sig,validSig))return false;try{const value=JSON.parse(Buffer.from(body,'base64url').toString('utf8'));return typeof value.exp==='number'&&value.exp>Date.now()}catch{return false}}
+export function setSessionCookie(res,token,maxAge=MAX_AGE){let flags=`${COOKIE}=${token}; HttpOnly; Path=/; SameSite=Strict; Max-Age=${maxAge}`;if(process.env.VERCEL||process.env.NODE_ENV==='production')flags+='; Secure';res.setHeader('Set-Cookie',flags)}
+export function json(res,status,body){res.statusCode=status;res.setHeader('Content-Type','application/json; charset=utf-8');res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.end(JSON.stringify(body))}
+export function sameOrigin(req){const origin=req.headers.origin;if(!origin)return true;const proto=(req.headers['x-forwarded-proto']||'http').split(',')[0],host=req.headers.host;try{return new URL(origin).host===host&&new URL(origin).protocol===proto+':'}catch{return false}}
